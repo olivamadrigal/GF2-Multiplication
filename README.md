@@ -33,3 +33,25 @@ https://flint.cs.yale.edu/cs421/papers/x86-asm/asm.html
 
 https://cs.lmu.edu/~ray/notes/nasmtutorial/ (for 64-bit registers with rax, rbx, etc.)
 
+# Object code: 
+
+You can find the equivalent program in C in this file: https://github.com/olivamadrigal/jenkins_pipeline/blob/main/gf2_9_mul.c
+
+You can put that in new file with main, same test vector, and create an object file:
+
+samira> gcc -O -g -o main.c
+
+Then do an object dump to see the machine code and assembly code from gcc:
+
+samira> objdump -d main.c
+
+main.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+(relative addr) // (object code in hex) // assembly ;)
+0000000000000000 <main>:
+
+and compare...
+  

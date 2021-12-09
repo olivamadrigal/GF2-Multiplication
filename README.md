@@ -13,6 +13,26 @@ Result: f912
 
 samira> 
 
+# General Instructions:
+
+Understand the algorithm
+
+Follow the call stack closely
+
+Careful attention to calling convetions and instructions...
+
+For example shl <op1> <op2> required operands
+  
+mov [ebp+12],edx and not dl...
+ 
+cmp a,b will compare the full contents of both registers... 
+  
+we compute accordingly
+  
+test as you go...
+  
+start with simple input test vectors, then scale up
+
 # Evironment:
 
 samira> nasm -v

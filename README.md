@@ -4,6 +4,7 @@ GF(2^n) multiplication for IA 32 x86 NASM with n=9 as example
 GF(2^n) multiplication for IA x86-64 architecture with n=29 as an example
 
 # Example run:
+32-bit version:
 
 samira> nasm -f elf -g -F stabs gf2.asm -l gf2.lst
 
@@ -13,7 +14,15 @@ samira> ./gf2
 
 Result: f912
 
-samira> 
+64-bit version:
+
+samirita> nasm -f elf64 -l gf2.lst gf2.asm
+
+samirita> gcc -o gf2 gf2.o
+
+samirita> ./gf2
+
+Result: 155cdbff5519200
 
 # General Instructions:
 
@@ -63,4 +72,32 @@ Linux fedora 5.14.10-300.fc35.x86_64 #1 SMP Thu Oct 7 20:48:44 UTC 2021 x86_64 x
 
 https://www.cs.dartmouth.edu/~sergey/cs258/tiny-guide-to-x86-assembly.pdf
 
-https://flint.cs.yale.edu/cs421/pa
+https://flint.cs.yale.edu/cs421/papers/x86-asm/asm.html
+
+https://cs.lmu.edu/~ray/notes/nasmtutorial/ (for 64-bit registers with rax, rbx, etc.)
+
+https://www.csee.umbc.edu/portal/help/nasm/ (excellent resource and examples for instruction conventions)
+  
+# Object code: 
+
+You can find the equivalent program in C in this file: https://github.com/olivamadrigal/jenkins_pipeline/blob/main/gf2_9_mul.c
+
+You can put that in new file with main, same test vectors, and create an object file:
+
+samira> gcc -O -g -o main.c
+
+Then do an object dump to see the machine code and assembly code from gcc compiler:
+  
+samirita> nasm -v
+
+samira> objdump -d main.c
+
+main.o:     file format elf64-x86-64
+
+Disassembly of section .text:
+
+(relative addr) // (object code in hex) // assembly ;)
+  
+0000000000000000 <main>:
+
+and compare...

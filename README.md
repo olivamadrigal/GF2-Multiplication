@@ -1,5 +1,7 @@
 # GF2-Multiplication
-GF(2^n) multiplication in IA 32 x86 NASM with n=9 as example
+GF(2^n) multiplication for IA 32 x86 NASM with n=9 as example
+
+GF(2^n) multiplication for IA x86-64 architecture with n=29 as an example
 
 # Example run:
 
@@ -52,6 +54,8 @@ https://www.cs.dartmouth.edu/~sergey/cs258/tiny-guide-to-x86-assembly.pdf
 https://flint.cs.yale.edu/cs421/papers/x86-asm/asm.html
 
 https://cs.lmu.edu/~ray/notes/nasmtutorial/ (for 64-bit registers with rax, rbx, etc.)
+
+https://www.csee.umbc.edu/portal/help/nasm/ (excellent resource and examples for instruction conventions)
 
 # Object code: 
 
